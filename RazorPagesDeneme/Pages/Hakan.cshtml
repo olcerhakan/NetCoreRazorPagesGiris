@@ -1,0 +1,25 @@
+﻿
+@page "/Hakkinda" 
+@model RazorPagesDeneme.Pages.HakanModel
+@{
+    ViewData["Title"] = "Hakan";
+}
+@*https://www.learnrazorpages.com/razor-pages/routing*@
+<h1>Benim Adım @ViewBag.ad</h1>
+<h2>Göz rengim : @Model.GozRengi</h2>
+
+<hr />
+
+<h2>Canberk'i ne kadar tanıyorsunuz?</h2>
+
+
+<form method="post">
+    Canberk'in soyadı nedir ? :
+    <input asp-for="Quiz.Cevap" />
+    <span asp-validation-for="Quiz.Cevap"></span>
+    <input type="submit" />
+</form>
+@if (!string.IsNullOrEmpty(Model.Sonuc))
+{
+    <div class="alert alert-info">@Model.Sonuc</div>
+}
